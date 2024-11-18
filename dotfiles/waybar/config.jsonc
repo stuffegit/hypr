@@ -1,0 +1,57 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 46,
+  "spacing": 0,
+  "margin-top": 0,
+  "margin-bottom": -10,
+  "margin-left": 10,
+  "margin-right": 10,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["custom/weather", "pulseaudio", "clock"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "󰗖",
+      "active": "󰝥",
+      "default": "󰝦"
+    },
+    "sort-by-number": true
+
+  },
+  "hyprland/window": {
+    "separate-outputs": true
+  },
+
+  "custom/updates": {
+    "interval": 7200, // every two hours
+    "format": "󱧘 {}",
+    "exec": "~/.config/waybar/scripts/arch_updates.sh",
+    "on-click": "kitty --class wm-floating --title all_is_kitty --hold --detach sh -c 'pacman -Syu'",
+    "tooltip": true
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "restart-interval": 300,
+    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+    "return-type": "json"
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}% ",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}
+
