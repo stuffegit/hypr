@@ -1,113 +1,50 @@
 @import "mocha.css"; 
 
 * {
-    border: none;
-    border-radius: 0;
     font-family: "FiraCode Nerd Font";
     font-size: 16px;
-    min-height: 0;
 }
 
 #waybar {
+    background: #1E1E2E;
+    border: 1px solid @mauve;
+    color: @mauve;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
     background: transparent;
-    color: @text;
+    box-shadow: none;
 }
 
 #workspaces {
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: 1px;
 }
 
 #workspaces * {
-    font-size: 0px;
-}
-#workspaces button {
-  background-color: @surface3;
+  font-size: 13px;
   color: @mauve;
-  border-radius: 100%;
-  min-height: 14px;
-  min-width: 14px;
-  margin: 5px 8px;
-  padding: 0px;
-  /*transition: all 0.5s cubic-bezier(0.33, 1.0, 0.68, 1.0); easeInOutCubic */
-  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
-  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
 }
 
 #workspaces button.active {
-  /*color: @surface0;
-    border-radius: 1rem;
-    padding: 0rem 10px;*/
-  background: radial-gradient(
-    circle,
-    rgba(203, 166, 247, 1) 0%,
-    rgba(193, 168, 247, 1) 12%,
-    rgba(249, 226, 175, 1) 19%,
-    rgba(189, 169, 247, 1) 20%,
-    rgba(182, 171, 247, 1) 24%,
-    rgba(198, 255, 194, 1) 36%,
-    rgba(177, 172, 247, 1) 37%,
-    rgba(170, 173, 248, 1) 48%,
-    rgba(255, 255, 255, 1) 52%,
-    rgba(166, 174, 248, 1) 52%,
-    rgba(160, 175, 248, 1) 59%,
-    rgba(148, 226, 213, 1) 66%,
-    rgba(155, 176, 248, 1) 67%,
-    rgba(152, 177, 248, 1) 68%,
-    rgba(205, 214, 244, 1) 77%,
-    rgba(148, 178, 249, 1) 78%,
-    rgba(144, 179, 250, 1) 82%,
-    rgba(180, 190, 254, 1) 83%,
-    rgba(141, 179, 250, 1) 90%,
-    rgba(137, 180, 250, 1) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradient_f 20s ease-in-out infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  background-color: transparent;
+  box-shadow: inset 0 -3px @mauve;
 }
 
-#workspaces button.hover {
-    background-color: @mauve;
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 30%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+#workspaces button.focused, #workspaces button.urgent {
+  background-color: #1E1E2E;
 }
 
-@keyframes gradient_f {
-  0% {
-    background-position: 0% 200%;
-  }
-
-  50% {
-    background-position: 200% 0%;
-  }
-
-  100% {
-    background-position: 400% 200%;
-  }
-}
-
-@keyframes gradient_f_nh {
-  0% {
-    background-position: 0% 200%;
-  }
-
-  100% {
-    background-position: 200% 200%;
-  }
-}
-
-/* Main Modules */
 #wireplumber,
 #mode,
 #custom-launcher,
@@ -134,72 +71,43 @@
 #custom-clipboard,
 #custom-ss,
 #custom-weather {
-  background-color: @surface0;
-  color: @rosewater;
-  border-radius: 16px;
-  padding: 0.5rem 1rem;
-  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
-  margin-top: 10px;
-  margin-right: 10px;
+  background-color: #1E1E2E;
+  color: @mauve;
+  padding: 0rem 1rem;
+  margin-top: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  margin-left: 1px;
 }
 
+#image {
+  border-left: 1px solid @mauve;
+}
 
-
-
-#cpu {
-  color: @sapphire;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+#custom-mediaplayer, #mpris {
+  background-color: #1E1E2E;
+  border: 1px solid @mauve;
+  color: @mauve;
+  padding: 0rem 1rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin-right: 0px;
-  padding-right: 5px;
-}
+} 
 
-#memory {
-  border-radius: 0px;
+#pulseaudio {
+  background-color: #1E1E2E;
+  color: @mauve;
+  padding: 0rem 1rem;
+  margin-top: 1px;
+  margin-bottom: 1px;
   margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#custom-gpu {
-  color: @green;
-  border-radius: 0px;
-  margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
+} 
 
-#temperature {
-  color: @red;
-  border-radius: 0px;
-  margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#disk {
-  color: @peach;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 5px;
-  padding-right: 1rem;
-}
-
-/* Updates Module */
-#custom-updates {
-  color: @sky;
-}
-
-/* =============================== */
-
-/* =============================== */
-/* Clock Module */
 #clock {
-  color: @flamingo;
+  color: @mauve;
 }
 
-/* =============================== */
-
-#custom-music.low {
+/*#custom-music.low {
   background: rgb(148, 226, 213);
   background: linear-gradient(
     52deg,
@@ -285,175 +193,7 @@
   background: @surface0;
 }
 
-/* =============================== */
-/* Music/PlayerCTL Module */
 #custom-music {
   color: @mauve;
-}
+}*/
 
-/* =============================== */
-
-/* =============================== */
-/* Network Module */
-#network {
-  color: @blue;
-  /* border-top-right-radius: 0; */
-  /* border-bottom-right-radius: 0; */
-  margin-right: 0px;
-  /* padding-right: 5px; */
-}
-
-/* =============================== */
-
-/* =============================== */
-/* PulseAudio Module */
-#pulseaudio {
-  background-color: @surface0;
-  color: @mauve;
-  border-radius: 16px;
-  padding: 0.5rem 1rem;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  margin-right: 10px;
-} 
-
-/* =============================== */
-
-/* =============================== */
-/* Backlight Module */
-#backlight {
-  color: @peach;
-  border-radius: 0;
-  margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-/* =============================== */
-
-/* =============================== */
-/* Hyprshad Module */
-
-/* #custom-hyprshade { */
-/*   color: @yellow; */
-/*   border-top-right-radius: 0; */
-/*   border-bottom-right-radius: 0; */
-/*   margin-right: 0px; */
-/*   padding-right: 5px; */
-/* } */
-/* =============================== */
-
-/* =============================== */
-/* Battery Module */
-#upower {
-  color: @green;
-  border-radius: 0;
-  margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#battery {
-  color: @green;
-  border-radius: 0;
-  margin-right: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @maroon;
-}
-
-#battery.critical:not(.charging) {
-  color: @red;
-  animation-name: blink;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes blink {
-  to {
-    background: @red;
-    color: @surface1;
-  }
-}
-
-/* =============================== */
-
-/* Notifications Module */
-#custom-notifications {
-  color: @mauve;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 5px;
-  padding-right: 1.25rem;
-}
-
-/* =============================== */
-/* Tray Module */
-#tray {
-  color: @mauve;
-  padding-right: 1.25rem;
-}
-
-/* =============================== */
-
-/* =============================== */
-/* |       Custom Modules        | */
-/* =============================== */
-#custom-custom {
-  color: @peach;
-  padding-right: 1.25rem;
-  margin-right: 0px;
-}
-
-/* Screenshot */
-#custom-ss {
-  color: @mauve;
-  padding-right: 1.5rem;
-}
-
-/* Wallpaper */
-#custom-cycle_wall {
-  background: linear-gradient(
-    45deg,
-    rgba(245, 194, 231, 1) 0%,
-    rgba(203, 166, 247, 1) 0%,
-    rgba(243, 139, 168, 1) 13%,
-    rgba(235, 160, 172, 1) 26%,
-    rgba(250, 179, 135, 1) 34%,
-    rgba(249, 226, 175, 1) 49%,
-    rgba(166, 227, 161, 1) 65%,
-    rgba(148, 226, 213, 1) 77%,
-    rgba(137, 220, 235, 1) 82%,
-    rgba(116, 199, 236, 1) 88%,
-    rgba(137, 180, 250, 1) 95%
-  );
-  background-size: 500% 500%;
-  animation: gradient 7s linear infinite;
-}
-
-/* Notifications Module */
-#custom-clipboard {
-  color: @mauve;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-right: 0px;
-  padding-right: 8px;
-}
-
-/* Powermenu Module */
-#custom-power {
-  /* color: @mauve; */
-  color: @red;
-  /* border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 8px; */
-  padding-right: 1.2rem;
-}
